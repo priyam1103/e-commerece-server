@@ -28,7 +28,7 @@ exports.me = async function (req, res) {
 exports.authenticate = async function (req, res) {
   try {
     const { googleId, imageUrl, email, name } = req.body.response.profileObj;
-console.log(req.body.response)
+console.log(req.body)
     const user_ = await User.findOne({ googleId: googleId });
     if (user_) {
       const token = await user_.generateAuthToken();
