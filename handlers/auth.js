@@ -49,6 +49,7 @@ console.log(req.body)
         .json({ message: "Auth Successfull", user: user, token: token });
     }
   } catch (err) {
+    console.log(err)
     res.status(400).json({ message: "Please try again" });
   }
 };
